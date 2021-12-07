@@ -29,6 +29,7 @@ public class CommandManager {
 		addCommand(new SkipCommand());
 		addCommand(new StopCommand());
 		addCommand(new ClearCommand());
+		addCommand(new TestCommand());
 	}
 	
 	private void addCommand(ICommand cmd) {
