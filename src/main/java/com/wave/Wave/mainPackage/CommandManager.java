@@ -47,7 +47,7 @@ public class CommandManager {
 		String searchLower = search.toLowerCase();
 		
 		for (ICommand cmd : this.commands) {
-			if (cmd.getName().equals(searchLower) || cmd.getAliases().contains(searchLower)) {
+			if (cmd.getName().equals(searchLower)) {
 				return cmd;
 			}
 		}

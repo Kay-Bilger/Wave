@@ -25,9 +25,4 @@ public class LogoCommand implements ICommand {
 		return "Displays the Gras im Glas Logo";
 	}
 
-	@Override
-	public List<String> getAliases() {
-		return null;
-	}
-
 }

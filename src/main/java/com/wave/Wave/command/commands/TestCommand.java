@@ -5,17 +5,21 @@ import com.wave.Wave.command.ICommand;
 import com.wave.Wave.mainPackage.Track;
 import com.wave.Wave.mainPackage.TrackRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+
 
 public class TestCommand implements ICommand {
 
     @Autowired
-    private TrackRepository repository;
+    private TrackRepository trackRepository;
 
     @Override
     public void handle(CommandContext ctx) {
-        repository.save( new Track(ctx.getArgs().toString()));
-        Track track = repository.findTrackByName("test");
-        ctx.getChannel().sendMessage(track.toString()).queue();
+        trackRepository.save( new Track(ctx.getArgs().toString()));
+        Track track = trackRepository.findTrackByName("test");
+        //ctx.getChannel().sendMessage(track.toString()).queue();
+        ctx.getChannel().sendMessage("test-success").queue();
     }
 
     @Override
